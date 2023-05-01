@@ -9,12 +9,12 @@ public class Utils extends BasePage{
         driver.findElement(by).click();
     }
     public static void typeText(By by,String text){
+
         driver.findElement(by).sendKeys(text);
     }
     public static String getTextFromElement(By by){
         return driver.findElement(by).getText();
     }
-
     public static long timestamp() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         return timestamp.getTime();}

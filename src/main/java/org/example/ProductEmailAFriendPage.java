@@ -33,7 +33,7 @@ public class ProductEmailAFriendPage extends Utils {
         typeText(_typePersonalMessage, "Hi,I recommended this product to you,I used it,it's very good!");
         //click on send email button
         clickOnElement(_sendEmailButton);
-
+        //print error message
         String actualMessage = getTextFromElement(_sendEmailErrorMessage);
         System.out.println("My message: "+actualMessage);
         Assert.assertEquals(actualMessage, expectedErrorMessage, "Non register user can email a friend");
