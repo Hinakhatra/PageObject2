@@ -12,8 +12,14 @@ public class TestSuit extends BaseTest {
     ElectronicsPage electronicsPage = new ElectronicsPage();
     CameraAndPhotoPage cameraAndPhotoPage = new CameraAndPhotoPage();
     LeicaDigitalCamera leicaDigitalCamera = new LeicaDigitalCamera();
-    CartPage cartPage = new CartPage();
+    ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
     CompareProductsPage compareProductsPage = new CompareProductsPage();
+    ProductPage productPage = new ProductPage();
+    FacebookPage facebookPage = new FacebookPage();
+    CheckingAsGuestPage checkingAsGuestPage = new CheckingAsGuestPage();
+    CheckOutBillingPage checkOutBillingPage = new CheckOutBillingPage();
+    ShippingMethodPage shippingMethodPage = new ShippingMethodPage();
+    NopCommerceNewReleasePage nopCommerceNewReleasePage = new NopCommerceNewReleasePage();
 
     @Test
     public void VerifyUserShouldBeAbleToRegisterSuccessfully() {
@@ -91,7 +97,7 @@ public class TestSuit extends BaseTest {
         //get leica camera text
         leicaDigitalCamera.leicaCameraAddToCartAndShoppingCart();
         //compare product name matched or not in shopping cart
-        cartPage.compareProductNameInCart();
+        shoppingCartPage.compareProductNameInCart();
     }
     @Test
     public void VerifyNonRegisteredUserShouldNotBeAbleToVoteSuccessfully(){
@@ -103,6 +109,78 @@ public class TestSuit extends BaseTest {
         homePage.VerifyNonRegisteredUserShouldNotBeAbleToVoteSuccessfully();
 
     }
+    @Test
+    public void VerifyUserShouldBeAbleToSee4ProductNameSuccessfully(){
+        //print out product titles
+        homePage.printOutTheProductTitle();
+    }
+    @Test
+    public void VerifyUserShouldAbleToAcceptAlert(){
+        //verify search alert message
+        homePage.verifySearchAlertMessage();
+    }
+    @Test
+    public void VerifyUserShouldBeAbleToSelectAndPrintCurrencyAccordingly(){
+        //select US Dollar from drop down
+        homePage.printCurrencyInUSDollar();
+        //select Euro from drop down
+        homePage.printCurrencyInEuro();
+
+    }
+    @Test
+    public void VerifySearchFunctionalityWorkingFine(){
+        //type product name and click on search
+        homePage.searchFunctionality();
+        //print products name
+        productPage.printProductname();
+    }
+    @Test
+    public void VerifyNopCommerceNewReleaseLatestCommentShouldBeAppearLast(){
+        //click on New Release
+        homePage.clickOnNewReleaseDetails();
+        //fill all details in New release page
+        nopCommerceNewReleasePage.fillInNewReleaseDetails();
+
+
+    }
+    @Test
+    public void VerifyGuestUserShouldBeAbleToCheckOutSuccessfully(){
+        //click on build your own computer add to cart button
+        homePage.clickOnBuildUrOwnAddToCart();
+        //select all necessary fields on product page
+        productPage.buildYourOwnComputer();
+        //verifying all details of the product
+        shoppingCartPage.verifyDetailsOfBuildYourOwnComputer();
+        //click on checkout button in checkout as a guest page
+        checkingAsGuestPage.verifyCheckoutAsGuest();
+        //fill all the details on billing page
+        checkOutBillingPage.fillInBillingDetails();
+        //click on shipping method
+        shippingMethodPage.clickOnShippingMethod();
+        //fill all card payment details
+        shippingMethodPage.paymentInfo();
+        //click on confirm and verifying the message
+        shippingMethodPage.confirmOrder();
+
+
+    }
+    @Test
+    public void VerifyUserShouldBeAbleToSwitchToFaceBookWindowTab(){
+        //bottom of homepage click on facebook in follow us
+        homePage.handleMultipleWindow();
+        //verifying email,password and login elements
+        facebookPage.handleFaceBookPage();
+        //return back on home page and verifying message
+        homePage.verifyWelcomeMessage();
+
+    }
+    @Test
+    public void VerifyAlertMessageWhenUserClickOnVoteWithoutSelectAnyOption(){
+        //verifying vote alert message
+        homePage.verifyVoteAlertMessage();
+
+    }
+
 
 
 }

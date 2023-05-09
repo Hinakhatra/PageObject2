@@ -9,11 +9,20 @@ public class RegistrationPage extends Utils{
     private   By _password = By.id("Password");
     private   By _confirmPassword = By.id("ConfirmPassword");
     private   By _registerButton = By.id("register-button");
+    private By _dayOfBirthday = By.name("DateOfBirthDay");
+    private By _monthOfBirthday = By.name("DateOfBirthMonth");
+    private By _yearOfBirthday = By.name("DateOfBirthYear");
     public void fillInRegistrationDetail(){
         //type firstname
         typeText(_firstName,"TestFirstName");
         //type lastname
         typeText(_lastname,"TestLastName");
+        //select dropdown Day
+        selectElementByValue(_dayOfBirthday,"26");
+        //select dropdown Month
+        selectElementByIndex(_monthOfBirthday,2);
+        //select dropdown year
+        selectElementByText(_yearOfBirthday,"1985");
         //type email address
         typeText(_email,"xyz@gmail.com");
         //type password

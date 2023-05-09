@@ -9,9 +9,9 @@ public class BaseTest extends Utils{
     public void setUp() {
         driverManager.openBrowser();
     }
-    @AfterMethod
-    public void tearDown(){
-        driverManager.closeBrowser();
-    }
+   // @AfterMethod
+   // public void tearDown(){
+        //  driverManager.closeBrowser();
+   // }
 
 }
