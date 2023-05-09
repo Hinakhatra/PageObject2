@@ -17,7 +17,8 @@ public class ShippingMethodPage extends Utils{
     private By _sortCode = By.cssSelector("input#CardCode");
     private By _continue2 = By.xpath("//button[@class='button-1 payment-info-next-step-button']");
     private By _confirmButton = By.xpath("//button[text()='Confirm']");
-    private By _orderSuccessfullyMessage = By.xpath("//div[@class='section order-completed']");
+    private By _orderSuccessfullyMessage = By.xpath("//div[@class='section order-completed']//div[@class='title']");
+    private By _orderNumber = By.xpath("//div[@class='order-number']");
 
     public void clickOnShippingMethod(){
         clickOnElement(_nextdayAir);
@@ -47,6 +48,8 @@ public class ShippingMethodPage extends Utils{
         //verify and assert order is successful message
         String orderSuccessfullyMessage = getTextFromElement(_orderSuccessfullyMessage);
         System.out.println("Order Details: " +orderSuccessfullyMessage);
+        String orderNumber = getTextFromElement(_orderNumber);
+        System.out.println(orderNumber);
         Assert.assertEquals(orderSuccessfullyMessage,expectedOrderConfirmationMessage,"Order is not processed");
 
 

@@ -7,7 +7,8 @@ public class ShoppingCartPage extends Utils{
     String expectedConfirmProductMessage = "Product Name is not Match";
    // String expectedComputerDetails = "No Details Match";
     private By _productName1 = By.className("product-name");
-    private By _computerDetails = By.cssSelector("td.product");
+    private By _buildYourOwnComputername = By.cssSelector("a.product-name");
+    private By _computerDetails = By.xpath("//td[@class='product']/div[1]");
     private By _termsCheckBox = By.cssSelector("input#termsofservice");
     private By _ckeckout = By.cssSelector("button#checkout");
     public void compareProductNameInCart() {
@@ -19,10 +20,11 @@ public class ShoppingCartPage extends Utils{
 
     }
     public void verifyDetailsOfBuildYourOwnComputer(){
-
+        String productName = getTextFromElement(_buildYourOwnComputername);
+        System.out.println("Product Name: "+productName);
         String actualComputerDetails  = getTextFromElement(_computerDetails);
         System.out.println(actualComputerDetails);
-        //Assert.assertEquals(actualComputerDetails,expectedComputerDetails,"No Details Match");
+        Assert.assertNotEquals(actualComputerDetails,"No Details Match");
         //click on terms of service checkbox
         clickOnElement(_termsCheckBox);
         //click on checkout button

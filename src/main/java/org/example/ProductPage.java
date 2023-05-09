@@ -31,6 +31,8 @@ public class ProductPage extends Utils {
         clickOnElement(_hdd);
         //click on vista premium in OS
         clickOnElement(_os);
+        //for uncheck checkbox1
+        clickOnElement(_checkbox1);
         //click on all 3 check box
         clickOnElement(_checkbox1);
         clickOnElement(_checkbox2);

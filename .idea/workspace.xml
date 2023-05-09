@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea78426f-cf56-42f5-a9fc-8b3775466809" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CameraAndPhotoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CameraAndPhotoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ElectronicsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ElectronicsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductEmailAFriendPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProductEmailAFriendPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils.java" afterDir="false" />
+    <list default="true" id="ea78426f-cf56-42f5-a9fc-8b3775466809" name="Changes" comment="New file added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ShippingMethodPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ShippingMethodPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ShoppingCartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ShoppingCartPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +49,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.TestSuit.VerifyUserShouldBeAbleToRegisterSuccessfully">
-    <configuration name="TestSuit" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TestSuit.VerifyGuestUserShouldBeAbleToCheckOutSuccessfully">
+    <configuration name="TestSuit.VerifyGuestUserShouldBeAbleToCheckOutSuccessfully" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POExercise02" />
       <extension name="coverage">
         <pattern>
@@ -61,24 +60,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.TestSuit" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestSuit.VerifyNonRegisteredUserShouldNotBeAbleToEmailAFriendSuccessfully" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POExercise02" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.TestSuit" />
-      <option name="METHOD_NAME" value="VerifyNonRegisteredUserShouldNotBeAbleToEmailAFriendSuccessfully" />
+      <option name="METHOD_NAME" value="VerifyGuestUserShouldBeAbleToCheckOutSuccessfully" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -86,7 +68,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuit.VerifyUserShouldBeAbleToCompare2productsSuccessfully" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuit.VerifyNopCommerceNewReleaseLatestCommentShouldBeAppearLast" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POExercise02" />
       <extension name="coverage">
         <pattern>
@@ -96,7 +78,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.TestSuit" />
-      <option name="METHOD_NAME" value="VerifyUserShouldBeAbleToCompare2productsSuccessfully" />
+      <option name="METHOD_NAME" value="VerifyNopCommerceNewReleaseLatestCommentShouldBeAppearLast" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -104,7 +86,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuit.VerifyUserShouldBeAbleToRegisterSuccessfully" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuit.VerifySearchFunctionalityWorkingFine" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POExercise02" />
       <extension name="coverage">
         <pattern>
@@ -114,7 +96,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.TestSuit" />
-      <option name="METHOD_NAME" value="VerifyUserShouldBeAbleToRegisterSuccessfully" />
+      <option name="METHOD_NAME" value="VerifySearchFunctionalityWorkingFine" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -122,7 +104,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuit.VerifyUserShouldBeAbleToSeeProductInShoppingCartSuccessfully" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuit.VerifyUserShouldBeAbleToSelectAndPrintCurrencyAccordingly" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POExercise02" />
       <extension name="coverage">
         <pattern>
@@ -132,7 +114,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.TestSuit" />
-      <option name="METHOD_NAME" value="VerifyUserShouldBeAbleToSeeProductInShoppingCartSuccessfully" />
+      <option name="METHOD_NAME" value="VerifyUserShouldBeAbleToSelectAndPrintCurrencyAccordingly" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSuit.VerifyUserShouldBeAbleToSwitchToFaceBookWindowTab" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POExercise02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.TestSuit" />
+      <option name="METHOD_NAME" value="VerifyUserShouldBeAbleToSwitchToFaceBookWindowTab" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -142,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestSuit.VerifyUserShouldBeAbleToRegisterSuccessfully" />
-        <item itemvalue="TestNG.TestSuit.VerifyUserShouldBeAbleToCompare2productsSuccessfully" />
-        <item itemvalue="TestNG.TestSuit" />
-        <item itemvalue="TestNG.TestSuit.VerifyUserShouldBeAbleToSeeProductInShoppingCartSuccessfully" />
-        <item itemvalue="TestNG.TestSuit.VerifyNonRegisteredUserShouldNotBeAbleToEmailAFriendSuccessfully" />
+        <item itemvalue="TestNG.TestSuit.VerifyGuestUserShouldBeAbleToCheckOutSuccessfully" />
+        <item itemvalue="TestNG.TestSuit.VerifyNopCommerceNewReleaseLatestCommentShouldBeAppearLast" />
+        <item itemvalue="TestNG.TestSuit.VerifyUserShouldBeAbleToSelectAndPrintCurrencyAccordingly" />
+        <item itemvalue="TestNG.TestSuit.VerifyUserShouldBeAbleToSwitchToFaceBookWindowTab" />
+        <item itemvalue="TestNG.TestSuit.VerifySearchFunctionalityWorkingFine" />
       </list>
     </recent_temporary>
   </component>
@@ -159,6 +159,18 @@
       <option name="presentableId" value="Default" />
       <updated>1682781064385</updated>
     </task>
+    <task id="LOCAL-00001" summary="New file added">
+      <created>1683664567611</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683664567611</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New file added" />
+    <option name="LAST_COMMIT_MESSAGE" value="New file added" />
   </component>
 </project>
