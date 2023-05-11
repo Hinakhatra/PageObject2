@@ -156,11 +156,18 @@ public class HomePage extends Utils{
         alert.accept();
 
     }
-    public void searchFunctionality(){
+    public void searchFunctionality(String searchText,String expectedResult){
         //type text in search box
-        typeText(_searchPlaceHolderText,"Nike");
+        typeText(_searchPlaceHolderText,searchText);
         //click on search button
         clickOnElement(_searchButton);
+        //Using List print product names
+        List<WebElement>productLists = driver.findElements(By.cssSelector("div.item-grid h2"));
+        for (WebElement e:productLists){
+            System.out.println(e.getText());
+        }
+        String actualmessage = searchText;
+        Assert.assertEquals(actualmessage,expectedResult);
     }
     public void handleMultipleWindow() {
         //click on facebook

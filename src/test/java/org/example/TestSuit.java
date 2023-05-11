@@ -130,9 +130,7 @@ public class TestSuit extends BaseTest {
     @Test
     public void VerifySearchFunctionalityWorkingFine(){
         //type product name and click on search
-        homePage.searchFunctionality();
-        //print products name
-        productPage.printProductname();
+        homePage.searchFunctionality("Apple","Nike");
     }
     @Test
     public void VerifyNopCommerceNewReleaseLatestCommentShouldBeAppearLast(){

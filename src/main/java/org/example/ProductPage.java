@@ -15,13 +15,7 @@ public class ProductPage extends Utils {
     private By _checkbox3 = By.cssSelector("input#product_attribute_5_12");
     private By _addToCart = By.cssSelector("button#add-to-cart-button-1");
     private By _shoppingCart = By.cssSelector("span.cart-label");
-    public void printProductname(){
-        //Using List print product names
-        List<WebElement>searchText = driver.findElements(By.cssSelector("div.item-grid h2"));
-        for (WebElement e:searchText){
-            System.out.println(e.getText());
-        }
-    }
+
     public void buildYourOwnComputer(){
         //select 2.5 GHz intel pentium processor
         selectElementByIndex(_processor,1);
