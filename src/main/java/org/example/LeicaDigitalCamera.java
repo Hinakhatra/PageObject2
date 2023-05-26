@@ -17,8 +17,6 @@ public class LeicaDigitalCamera extends Utils{
         //click on shopping cart on green line
         clickOnElement(_shoppingCart);
 
-
-
     }
 
 }

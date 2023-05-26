@@ -19,6 +19,7 @@ public class ShippingMethodPage extends Utils{
     private By _confirmButton = By.xpath("//button[text()='Confirm']");
     private By _orderSuccessfullyMessage = By.xpath("//div[@class='section order-completed']//div[@class='title']");
     private By _orderNumber = By.xpath("//div[@class='order-number']");
+    LoadProp loadProp = new LoadProp();
 
     public void clickOnShippingMethod(){
         clickOnElement(_nextdayAir);
@@ -50,8 +51,7 @@ public class ShippingMethodPage extends Utils{
         System.out.println("Order Details: " +orderSuccessfullyMessage);
         String orderNumber = getTextFromElement(_orderNumber);
         System.out.println(orderNumber);
-        Assert.assertEquals(orderSuccessfullyMessage,expectedOrderConfirmationMessage,"Order is not processed");
-
+        Assert.assertEquals(orderSuccessfullyMessage,loadProp.getProperty("expectedOrderConfirmationMessage"));
 
 
     }

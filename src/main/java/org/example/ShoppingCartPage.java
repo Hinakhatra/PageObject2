@@ -11,12 +11,13 @@ public class ShoppingCartPage extends Utils{
     private By _computerDetails = By.xpath("//td[@class='product']/div[1]");
     private By _termsCheckBox = By.cssSelector("input#termsofservice");
     private By _ckeckout = By.cssSelector("button#checkout");
+    LoadProp loadProp = new LoadProp();
     public void compareProductNameInCart() {
         //Get same product name in shopping cart
         String productName1 = getTextFromElement(By.className("product-name"));
         //print same product name
         System.out.println("Print product name: " + productName1);
-        Assert.assertEquals(productName1, expectedConfirmProductMessage, "Product Name is not Match");
+        Assert.assertEquals(productName1,loadProp.getProperty("expectedConfirmProductMessage"));
 
     }
     public void verifyDetailsOfBuildYourOwnComputer(){

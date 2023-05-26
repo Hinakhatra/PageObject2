@@ -3,6 +3,7 @@ package org.example;
 import org.testng.annotations.Test;
 
 public class TestSuit extends BaseTest {
+    //create object by access modifiers
     HomePage homePage = new HomePage();
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationResultPage registrationResultPage = new RegistrationResultPage();
@@ -26,7 +27,7 @@ public class TestSuit extends BaseTest {
         //click on register button
         homePage.clickOnRegisterButton();
         //enter register details
-        registrationPage.fillInRegistrationDetail();
+        registrationPage.fillInRegistrationDetails_ForNewRegistration();
         //verify register success or not
         registrationResultPage.VerifyUserShouldBeAbleToRegisterSuccessfully();
     }
@@ -35,7 +36,7 @@ public class TestSuit extends BaseTest {
         //click on register button
         homePage.clickOnRegisterButton();
         //enter register details
-        registrationPage.fillInRegistrationDetail();
+        registrationPage.fillInRegistrationDetails_ForAlReadyRegisteredUser();
         //click on login
         homePage.clickOnLogin();
         //enter login details
@@ -52,7 +53,7 @@ public class TestSuit extends BaseTest {
         //click on register button
         homePage.clickOnRegisterButton();
         //enter register details
-        registrationPage.fillInRegistrationDetail();
+        registrationPage.fillInRegistrationDetails_ForAlReadyRegisteredUser();
         //click on login
         homePage.clickOnLogin();
         //enter login details
@@ -130,7 +131,7 @@ public class TestSuit extends BaseTest {
     @Test
     public void VerifySearchFunctionalityWorkingFine(){
         //type product name and click on search
-        homePage.searchFunctionality("Apple","Nike");
+        homePage.searchFunctionality("Apple","Apple");
     }
     @Test
     public void VerifyNopCommerceNewReleaseLatestCommentShouldBeAppearLast(){
@@ -138,8 +139,6 @@ public class TestSuit extends BaseTest {
         homePage.clickOnNewReleaseDetails();
         //fill all details in New release page
         nopCommerceNewReleasePage.fillInNewReleaseDetails();
-
-
     }
     @Test
     public void VerifyGuestUserShouldBeAbleToCheckOutSuccessfully(){

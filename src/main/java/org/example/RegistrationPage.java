@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class RegistrationPage extends Utils{
     private By _firstName = By.id("FirstName");
-    private   By _lastname = By.id("LastName");
+    private   By _lastName = By.id("LastName");
     private   By _email = By.name("Email");
     private   By _password = By.id("Password");
     private   By _confirmPassword = By.id("ConfirmPassword");
@@ -12,25 +12,49 @@ public class RegistrationPage extends Utils{
     private By _dayOfBirthday = By.name("DateOfBirthDay");
     private By _monthOfBirthday = By.name("DateOfBirthMonth");
     private By _yearOfBirthday = By.name("DateOfBirthYear");
-    public void fillInRegistrationDetail(){
+    LoadProp loadProp = new LoadProp();
+    public void fillInRegistrationDetails_ForNewRegistration(){
         //type firstname
-        typeText(_firstName,"TestFirstName");
+        typeText(_firstName,loadProp.getProperty("firstName"));
         //type lastname
-        typeText(_lastname,"TestLastName");
+        typeText(_lastName,loadProp.getProperty("lastName"));
         //select dropdown Day
-        selectElementByValue(_dayOfBirthday,"26");
+        selectElementByValue(_dayOfBirthday,loadProp.getProperty("date_Of_Birth"));
         //select dropdown Month
-        selectElementByIndex(_monthOfBirthday,2);
+        selectElementByValue(_monthOfBirthday,loadProp.getProperty("month_Of_Birth"));
         //select dropdown year
-        selectElementByText(_yearOfBirthday,"1985");
+        selectElementByText(_yearOfBirthday,loadProp.getProperty("year_Of_Birth"));
         //type email address
-        typeText(_email,"xyz@gmail.com");
+        typeText(_email,loadProp.getProperty("email")+timestamp()+loadProp.getProperty("emailDomain"));
         //type password
-        typeText(_password,"test246");
+        typeText(_password,loadProp.getProperty("password"));
         //type confirm password
-        typeText(_confirmPassword,"test246");
+        typeText(_confirmPassword,loadProp.getProperty("confirmPassword"));
         //click on register submit button
         clickOnElement(_registerButton);
+
+    }
+    public void fillInRegistrationDetails_ForAlReadyRegisteredUser(){
+        //type firstname
+        typeText(_firstName,loadProp.getProperty("firstName"));
+        //type lastname
+        typeText(_lastName,loadProp.getProperty("lastName"));
+        //select dropdown Day
+        selectElementByValue(_dayOfBirthday,loadProp.getProperty("date_Of_Birth"));
+        //select dropdown Month
+        selectElementByValue(_monthOfBirthday,loadProp.getProperty("month_Of_Birth"));
+        //select dropdown year
+        selectElementByText(_yearOfBirthday,loadProp.getProperty("year_Of_Birth"));
+        //type email address
+        typeText(_email,loadProp.getProperty("email")+loadProp.getProperty("emailDomain"));
+        //type password
+        typeText(_password,loadProp.getProperty("password"));
+        //type confirm password
+        typeText(_confirmPassword,loadProp.getProperty("confirmPassword"));
+        //click on register submit button
+        clickOnElement(_registerButton);
+
+
 
     }
 

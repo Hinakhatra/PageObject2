@@ -10,6 +10,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class FacebookPage extends Utils{
+    LoadProp loadProp = new LoadProp();
     private By _allowCookies = By.xpath("(//div[contains(@aria-label,'Allow all cookies')])[2]");
     private By _close = By.xpath("//div[@aria-label='Close']");
     private By _emailFacebook = By.xpath("//input[@placeholder='Email or phone']");
@@ -23,9 +24,9 @@ public class FacebookPage extends Utils{
             driver.switchTo().window(childWindowHandle);
         }
         //all actions on child window
-        String currentURL = driver.getCurrentUrl();
-        System.out.println("ChildWindow URL:"+currentURL);
-        Assert.assertEquals(currentURL, "https://www.facebook.com/nopCommerce");
+        String faceBookURL = driver.getCurrentUrl();
+        System.out.println("ChildWindow URL:"+faceBookURL);
+        Assert.assertEquals(faceBookURL,loadProp.getProperty("faceBookURL"));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(_close));
         clickOnElement(_allowCookies);
@@ -46,6 +47,7 @@ public class FacebookPage extends Utils{
         } else {
             System.out.println("Element Log in is InVisible");
         }
+        driver.close();
         //switch back to main window
         driver.switchTo().window(mainWindowHandle);
 

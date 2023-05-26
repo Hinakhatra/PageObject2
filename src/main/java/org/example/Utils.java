@@ -1,16 +1,17 @@
 package org.example;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.Date;
 
 public class Utils extends BasePage {
     public static void clickOnElement(By by) {
@@ -53,32 +54,59 @@ public class Utils extends BasePage {
         System.out.println(element.getText());
     }
     // Reusable method for explicit wait with condition URL matches
-    public static void explicitWait_UrlMatches(String url) {
+    public static void waitForUrlMatches(String url) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.urlMatches(url));
     }
     // Reusable method for explicit wait to wait until condition of visibility of element is matched
-    public static void explicitWait_VisibilityOfElementLocated(By by) {
+    public static void waitForVisibilityOfElementLocated(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
     // Reusable method for explicit wait to wait until condition Element to be clickable is matched
-    public static void explicitWait_ElementToBeClickable(By by) {
+    public static void waitForElementToBeClickable(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
     // Reusable method for explicit wait to wait until condition of Invisibility of Element located is matched
-    public static void explicitWait_InvisibilityOfElementLocated(By by) {
+    public static void waitForInvisibilityOfElementLocated(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
     // Reusable method for explicit wait to wait until condition of Text to be present in element located is matched
-    public static void explicitWait_TextToBePresentInElementLocated(By by, String text) {
+    public static void waitFoeTextToBePresentInElementLocated(By by, String text) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.textToBePresentInElementLocated(by, text));
     }
+    public static String getWindowHandle(){
+        return getWindowHandle();
+    }
+    public static String getCurrentURL(){
+        return getCurrentURL();
+    }
 
+    public static String currentTimeStamp() {
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyhhmmss");
+        return sdf.format(date);
+    }
+    public static void captureScreenshot( String fileName) {
+        //Convert web driver object to TakeScreenshot
+        TakesScreenshot scrShot = ((TakesScreenshot) driver);
+        //Call getScreenshotAs method to create image file
+        File
+                SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+        //Move image file to new destination
+        File destFile = new
+                File("src\\test\\Screenshots\\" + fileName + "" + currentTimeStamp() + ".png");
+        //Copy file at destination
+        try {
+            FileUtils.copyFile(SrcFile, destFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+    }
 
 }
 

@@ -9,6 +9,7 @@ public class CompareProductsPage extends Utils{
     private By _giftCardName = By.xpath("//tr[@class='product-name']/td[3]/a");
     private By _clearList = By.className("clear-list");
     private By _cleatListMessage = By.className("no-data");
+    LoadProp loadProp = new LoadProp();
     public void productsComparisonPage(){
         //print mobile name
         String actualMessage = getTextFromElement(_mobileName);
@@ -21,7 +22,7 @@ public class CompareProductsPage extends Utils{
         //print message after click on clear list
         String message = getTextFromElement(_cleatListMessage);
         System.out.println("My message: "+message);
-        Assert.assertEquals(message,expectedCompareProductMessage,"There are still 2-Product in ClearList");
+        Assert.assertEquals(message,loadProp.getProperty("expectedCompareProductMessage"));
 
     }
 

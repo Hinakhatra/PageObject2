@@ -38,6 +38,7 @@ public class HomePage extends Utils{
     private By _welComeMessage = By.xpath("//h2[text()='Welcome to our store']");
     private By _clickOnAddToCartBuildYourOwnComputer = By.xpath("//div[@class='product-grid home-page-product-grid']/div[2]/div[1]/div/div[2]/div[3]/div[2]/button[1]");
     private By _clickOnNewRelease = By.xpath("//a[@href=\"/nopcommerce-new-release\"][text()='details']");
+    LoadProp loadProp = new LoadProp();
 
     public void clickOnRegisterButton() {
         //click on register button
@@ -56,7 +57,7 @@ public class HomePage extends Utils{
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='poll-vote-error']")));
         String actualMessage = getTextFromElement(_voteErrorMessage);
         System.out.println("My message: "+actualMessage);
-        Assert.assertEquals(actualMessage,expectedCommunityPollMessage,"Every user can vote");
+        Assert.assertEquals(actualMessage,loadProp.getProperty("nonRegisteredVoteMessage"));
     }
     public void clickOnLogin(){
         //click on Login
@@ -116,7 +117,7 @@ public class HomePage extends Utils{
         //get alert message
         Alert alert = driver.switchTo().alert();
         //get text for expected and actual message
-        Assert.assertEquals(alert.getText(),"Please enter some search keyword");
+        Assert.assertEquals(alert.getText(),loadProp.getProperty("searchAlertMessage"));
         alert.accept();
 
     }
@@ -124,7 +125,7 @@ public class HomePage extends Utils{
         String actualCurrency = getTextFromElement(_usDollar);
         System.out.println("Selected Currency: "+actualCurrency);
         //select us dollar in currency selector
-        selectElementByText(_currencySelector, "US Dollar");
+        selectElementByText(_currencySelector,loadProp.getProperty("currencySelector"));
         //create list for elements
         List<WebElement> actualCurrency1 = driver.findElements(By.cssSelector("span.price"));
         for (WebElement e : actualCurrency1) {
@@ -137,7 +138,7 @@ public class HomePage extends Utils{
         String actualCurrency = getTextFromElement(_euro);
         System.out.println("Selected Currency: "+actualCurrency);
         //select euro in currency selector
-        selectElementByText(_currencySelector,"Euro");
+        selectElementByText(_currencySelector,loadProp.getProperty("currencySelector1"));
         //create list for elements
         List<WebElement>actualCurrency1 = driver.findElements(By.cssSelector("span.price"));
         for (WebElement e:actualCurrency1) {
@@ -151,7 +152,7 @@ public class HomePage extends Utils{
         clickOnElement(_voteButton);
         Alert alert = driver.switchTo().alert();
         //get text for expected and actual message
-        Assert.assertEquals(alert.getText(),"Please select an answer");
+        Assert.assertEquals(alert.getText(),loadProp.getProperty("voteAlertMessage"));
         //click on ok button
         alert.accept();
 
@@ -178,7 +179,7 @@ public class HomePage extends Utils{
         System.out.println("HomePage URL:"+currentURL);
         String actualMessage = getTextFromElement(_welComeMessage);
         System.out.println("WelCome message is: "+actualMessage);
-        Assert.assertEquals(actualMessage,expectedWelComeMessage,"No Message");
+        Assert.assertEquals(actualMessage,loadProp.getProperty("expectedWelComeMessage"));
 
     }
     public void clickOnBuildUrOwnAddToCart(){

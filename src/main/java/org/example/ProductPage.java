@@ -1,9 +1,6 @@
 package org.example;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class ProductPage extends Utils {
     private By _processor = By.cssSelector("select#product_attribute_1");
@@ -15,12 +12,12 @@ public class ProductPage extends Utils {
     private By _checkbox3 = By.cssSelector("input#product_attribute_5_12");
     private By _addToCart = By.cssSelector("button#add-to-cart-button-1");
     private By _shoppingCart = By.cssSelector("span.cart-label");
-
+    LoadProp loadProp = new LoadProp();
     public void buildYourOwnComputer(){
         //select 2.5 GHz intel pentium processor
-        selectElementByIndex(_processor,1);
+        selectElementByValue(_processor,loadProp.getProperty("processor"));
         //select 8GB in RAM
-        selectElementByValue(_ram,"5");
+        selectElementByValue(_ram,loadProp.getProperty("ram"));
        // click on 320GB in HDD
         clickOnElement(_hdd);
         //click on vista premium in OS
